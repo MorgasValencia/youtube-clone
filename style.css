@@ -1,13 +1,28 @@
 * {
   box-sizing: border-box;
-}
-
-body {
   margin: 0;
+  padding: 0;
 }
 
 nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.sidebar-section {
+  border-bottom: 1px solid black;
+}
+
+aside {
+  width: 240px;
+  height: 100%;
+  float: left;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
 }
