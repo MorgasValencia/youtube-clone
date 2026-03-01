@@ -34,7 +34,7 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 8px 0px 8px;
+  margin: 8px 0px 20px 0;
 }
 
 .logo-items {
@@ -146,11 +146,18 @@ nav {
   cursor: pointer;
 }
 
+/* Aligning Side menu to video section  */
+
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
 /* Side Bar Menu  */
 aside {
   width: 240px;
   height: 100%;
-  float: left;
 }
 
 .categories {
@@ -195,6 +202,15 @@ aside {
   background: #f9f9f9;
 }
 
+.channel-icon {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 24px;
+  cursor: pointer;
+}
+
 .active {
   font-weight: 500;
   background: #d0d0d0;
@@ -236,11 +252,99 @@ aside {
 
 /* Video  & Shorts Styles */
 main {
-  background-color: #f9f9f9;
-  height: 100%;
+  flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
+  padding-top: 6x;
   flex-direction: row;
-  gap: 20px;
-  border-top: 1px solid #ccc;
+  gap: 16px;
+}
+
+.video {
+  flex: 1 1 calc(33.333% - 16px);
+  max-width: calc(33.333% - 11px);
+
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.video:hover {
+  transform: scale(1.03);
+  background-color: #f0f0f5;
+  z-index: 10;
+}
+
+.video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  border: none;
+  pointer-events: none;
+}
+
+.video-info {
+  display: flex;
+  margin-top: 12px;
+  gap: 12px;
+  position: relative;
+}
+
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ccc;
+  flex-shrink: 0;
+}
+
+.video-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.video-text h3 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 2rem;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.video-text p {
+  font-size: 12px;
+  color: #606060;
+  line-height: 1.8rem;
+}
+
+.more-icon {
+  position: absolute;
+  right: -8px;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.more-icon:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(0.97);
+}
+
+.more-icon i {
+  color: #0f0f0f;
 }
