@@ -15,6 +15,7 @@
     <!-- Navigation Section  -->
     <header>
       <nav>
+        <!-- First Nav Section  -->
         <section class="logo-items">
           <!-- Menu Icon  -->
           <span class="material-icons menu-icon">menu</span>
@@ -22,20 +23,31 @@
           <img src="./media/YT-logo.svg" alt=" Youtube Logo" class="logo" />
         </section>
 
-        <!-- Searchbar Section  -->
-        <div class="searchbar">
-          <input type="search" id="search" placeholder="Search" />
-          <button><span class="material-icons">search</span></button>
+        <!-- Second Nav Menu Styles -->
+        <div class="search-container">
+          <!-- Searchbar Section  -->
+          <div class="searchbar">
+            <input type="search" id="search" placeholder="Search" />
+            <button><span class="material-icons">search</span></button>
+          </div>
+
           <!-- Voice Search Button    -->
-          <button><span class="material-icons">mic</span></button>
+          <button class="mic-btn">
+            <span class="material-icons">mic</span>
+          </button>
         </div>
 
-        <section>
+        <!-- Third Nav Menu Styles -->
+        <section class="profile-container">
           <!-- Create Button  -->
-          <button><span class="material-icons">add</span>Create</button>
+          <button class="create-btn">
+            <span class="material-icons">add</span>Create
+          </button>
 
           <!-- Notification Icon  -->
-          <button><span class="material-icons">notifications</span></button>
+          <button class="noty-btn">
+            <span class="material-icons">notifications</span>
+          </button>
 
           <!-- Profile icon  -->
           <img src="" alt="profile" class="profile-pic" />

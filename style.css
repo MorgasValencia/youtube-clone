@@ -23,16 +23,17 @@ h3 {
 
 .material-icons {
   cursor: pointer;
+  font-size: 20px !important;
 }
 
 /* Navigation  */
-
+/* Logo  Navigation  */
 nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 8px 0px 18px;
+  margin: 8px 0px 8px;
 }
 
 .logo-items {
@@ -47,16 +48,104 @@ nav {
 .logo {
   height: 20px;
 }
+
 /* Search Bar Styles  */
 
-.searchbar input {
-  font-size: 12px;
-  width: 350px;
-  height: 30px;
-  border-radius: 24px;
-  padding-left: 8px;
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
+.searchbar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 350px;
+  height: 30px;
+}
+
+.searchbar input {
+  background-color: transparent;
+  font-size: 12px;
+  font-weight: 400;
+  width: 100%;
+  padding: 1px 8px;
+  border: none;
+  outline: none;
+  flex: 1;
+}
+
+.searchbar button {
+  background-color: #f8f8f8;
+  border: 1px solid #d3d3d3;
+  border-radius: 0 40px 40px 0;
+  padding: 0 12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchbar button:hover {
+  background-color: #f0f0f0;
+  border: 1px solid #d3d3d3;
+}
+.search-bar span {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+.mic-btn,
+.noty-btn {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: none;
+}
+
+.mic-btn {
+  background-color: #f6f6f6;
+}
+
+.noty-btn {
+  background-color: transparent;
+}
+
+.mic-btn:hover,
+.noty-btn:hover {
+  background-color: #d9d9d9;
+}
+
+/* Third Nav Styles  */
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+  gap: 6px;
+}
+
+.create-btn {
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 14px;
+  border-radius: 16px;
+  gap: 3px;
+  background-color: #f2f2f2;
+  border: none;
+  cursor: pointer;
+}
+
+/* Side Bar Menu  */
 .sidebar-section {
   border-bottom: 1px solid black;
 }
