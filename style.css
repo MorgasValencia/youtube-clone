@@ -29,6 +29,7 @@ body {
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 4px;
+  padding-right: 28px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -51,7 +52,6 @@ body {
   border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  height: fit-content;
 }
 
 .video:hover,
@@ -62,10 +62,12 @@ body {
 /* -------- Shared iFrame Media Styles ------ */
 .video iframe,
 .shorts iframe {
-  width: 100%;
+  width: 100% !important;
+  height: auto !important;
   border-radius: 12px;
   border: none;
   pointer-events: none;
+  display: block;
 }
 
 /*-------- NAVIGATION ---------*/
@@ -332,8 +334,8 @@ main {
 
 .more-icon {
   position: absolute;
-  right: -4px;
-  top: -2px;
+  right: 0;
+  top: 0;
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -390,3 +392,58 @@ main {
 }
 
 /* ------Responsive Media Queries -------*/
+
+/* Tablet Responsiveness (2 videos/row) */
+@media (max-width: 1000px) {
+  aside {
+    width: 72px;
+  }
+  aside .category span,
+  .category-heading,
+  .categories-footer {
+    display: none;
+  }
+  main {
+    margin-left: 72px;
+  }
+  .video {
+    flex: 0 1 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+  }
+}
+
+/* Mobile  (1 video/row) */
+@media (max-width: 600px) {
+  aside {
+    display: none;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 10px;
+    width: 100%;
+  }
+  .video {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 0 24px 0;
+  }
+
+  .video iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .shorts-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 16px;
+    width: 100%;
+  }
+
+  .shorts {
+    flex: 0 0 160px;
+  }
+}
