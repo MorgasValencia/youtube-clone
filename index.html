@@ -12,6 +12,8 @@
     />
   </head>
   <body>
+    <!-- Sidebar Toggle -->
+    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle-input" />
     <!-- Dark Mode Input Feature  -->
     <input type="checkbox" id="dark-mode-toggle" class="dark-mode-input" />
 
@@ -21,7 +23,9 @@
         <!-- First Nav Section  -->
         <section class="logo-items">
           <!-- Menu Icon  -->
-          <span class="material-icons menu-icon">menu</span>
+          <label for="sidebar-toggle" class="menu-icon">
+            <span class="material-icons">menu</span>
+          </label>
           <!-- Logo-->
           <img src="./media/YT-logo.svg" alt=" Youtube Logo" class="logo" />
         </section>
@@ -79,15 +83,15 @@
           <div class="category-section">
             <span class="category active">
               <i class="material-icons">home</i>
-              Home
+              <span class="cat-label">Home</span>
             </span>
             <span class="category">
               <i class="material-icons">explore</i>
-              Explore
+              <span class="cat-label">Explore</span>
             </span>
             <span class="category">
               <i class="material-icons">subscriptions</i>
-              Subscriptions
+              <span class="cat-label">Subscriptions</span>
             </span>
           </div>
 
@@ -95,36 +99,36 @@
           <div class="category-section">
             <span class="category">
               <i class="material-icons">video_library</i>
-              Library
+              <span class="cat-label">Library</span>
             </span>
             <span class="category">
               <i class="material-icons">history</i>
-              History
+              <span class="cat-label">History</span>
             </span>
             <span class="category">
               <i class="material-icons">video_label</i>
-              Your videos
+              <span class="cat-label">Your videos</span>
             </span>
             <span class="category">
               <i class="material-icons">watch_later</i>
-              Watch later
+              <span class="cat-label">Watch later</span>
             </span>
             <span class="category">
               <i class="material-icons">expand_more</i>
-              Show more
+              <span class="cat-label">Show more</span>
             </span>
 
             <!-- Icon Group 3 with subscription icons  -->
           </div>
           <div class="category-section">
-            <p class="category_heading">Subscriptions</p>
+            <p class="category_heading"><span class="cat-label">Subscriptions</span></p>
             <span class="category">
               <img
                 src="./media/alex_hormozi.jpg"
                 alt="Alex Hormozi"
                 class="channel-icon"
               />
-              Alex Hormozi
+              <span class="cat-label">Alex Hormozi</span>
             </span>
             <span class="category">
               <img
@@ -132,7 +136,7 @@
                 alt="Leila Hormozi"
                 class="channel-icon"
               />
-              Leila Hormozi
+              <span class="cat-label">Leila Hormozi</span>
             </span>
             <span class="category">
               <img
@@ -140,7 +144,7 @@
                 alt="Nick Saraev"
                 class="channel-icon"
               />
-              Nick Saraev
+              <span class="cat-label">Nick Saraev</span>
             </span>
             <span class="category">
               <img
@@ -148,7 +152,7 @@
                 alt="Oliver Sjostrom"
                 class="channel-icon"
               />
-              Oliver Sjostrom
+              <span class="cat-label">Oliver Sjostrom</span>
             </span>
             <span class="category">
               <img
@@ -156,25 +160,25 @@
                 alt="Liam Ottely"
                 class="channel-icon"
               />
-              Liam Ottely
+              <span class="cat-label">Liam Ottely</span>
             </span>
           </div>
           <div class="category-section">
             <span class="category">
               <i class="material-icons">settings</i>
-              Settings
+              <span class="cat-label">Settings</span>
             </span>
             <span class="category">
               <i class="material-icons">history</i>
-              Report History
+              <span class="cat-label">Report History</span>
             </span>
             <span class="category">
               <i class="material-icons">help</i>
-              Help
+              <span class="cat-label">Help</span>
             </span>
             <span class="category">
               <i class="material-icons">feedback</i>
-              Send Feedback
+              <span class="cat-label">Send Feedback</span>
             </span>
           </div>
 
@@ -256,6 +260,14 @@
             <label class="filter-chip">
               <input type="radio" name="filter" value="travel">
               <span>Travel</span>
+            </label>
+            <label class="filter-chip filter-chip-extra">
+              <input type="radio" name="filter" value="lifestyle">
+              <span>Lifestyle</span>
+            </label>
+            <label class="filter-chip filter-chip-extra">
+              <input type="radio" name="filter" value="tech">
+              <span>Tech</span>
             </label>
           </div>
         </div>

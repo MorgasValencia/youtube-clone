@@ -500,6 +500,66 @@ aside {
   background: #e5e5e5;
 }
 
+/* -------- Sidebar Collapse Toggle -------*/
+.sidebar-toggle-input {
+  display: none;
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+aside,
+.categories {
+  transition: width 0.25s ease;
+}
+
+main {
+  transition: margin-left 0.25s ease;
+}
+
+#sidebar-toggle:checked ~ .content-wrapper aside {
+  width: 72px;
+}
+
+#sidebar-toggle:checked ~ .content-wrapper .categories {
+  width: 72px;
+}
+
+#sidebar-toggle:checked ~ .content-wrapper main {
+  margin-left: 72px;
+}
+
+#sidebar-toggle:checked ~ .content-wrapper .categories-footer,
+#sidebar-toggle:checked ~ .content-wrapper .category-heading,
+#sidebar-toggle:checked ~ .content-wrapper .cat-label {
+  display: none;
+}
+
+#sidebar-toggle:checked ~ .content-wrapper .category {
+  justify-content: center;
+  padding: 0;
+}
+
+#sidebar-toggle:checked ~ .content-wrapper .category i {
+  margin-right: 0;
+}
+
+#sidebar-toggle:checked ~ .content-wrapper .channel-icon {
+  margin-right: 0;
+}
+
+/* Filter chip extras: only visible when sidebar collapsed */
+.filter-chip-extra {
+  display: none;
+}
+
+#sidebar-toggle:checked ~ .content-wrapper .filter-chip-extra {
+  display: inline-flex;
+}
+
 /* -------- Main Video Content Area -------*/
 main {
   display: flex;
