@@ -423,6 +423,83 @@ aside {
   margin-bottom: 20px;
 }
 
+/* -------- Filter Chip Bar -------*/
+.filter-chip-bar {
+  flex-basis: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.filter-chips {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 12px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.filter-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #f2f2f2;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f0f0f;
+  white-space: nowrap;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+.filter-chip:has(input:checked) {
+  background: #0f0f0f;
+  color: white;
+}
+
+.filter-chip:hover {
+  background: #e5e5e5;
+}
+
+.filter-chip:has(input:checked):hover {
+  background: #272727;
+}
+
+/* Dark mode filter chips */
+.dark-mode-input:checked ~ .content-wrapper .filter-chip {
+  background: #272727;
+  color: #f1f1f1;
+}
+
+.dark-mode-input:checked ~ .content-wrapper .filter-chip:hover {
+  background: #3d3d3d;
+}
+
+.dark-mode-input:checked ~ .content-wrapper .filter-chip:has(input:checked) {
+  background: #f1f1f1;
+  color: #0f0f0f;
+}
+
+.dark-mode-input:checked ~ .content-wrapper .filter-chip:has(input:checked):hover {
+  background: #e5e5e5;
+}
+
 /* -------- Main Video Content Area -------*/
 main {
   display: flex;
