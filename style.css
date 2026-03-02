@@ -70,6 +70,109 @@ body {
   display: block;
 }
 
+/* ------- Dark Mode Feature 1  Styles ------  */
+.dark-mode-input {
+  display: none;
+}
+
+/* Icon States  */
+.light-icon {
+  display: none;
+}
+.dark-icon {
+  display: flex;
+}
+
+/* ------Dark Mode Button------  */
+.dark-mode-btn {
+  height: 32px;
+  width: 32px;
+  min-width: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+  line-height: 1;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.dark-mode-btn:hover {
+  background-color: #d9d9d9;
+}
+
+/* ------ Background style--------*/
+.dark-mode-input:checked ~ header,
+.dark-mode-input:checked ~ .content-wrapper aside,
+.dark-mode-input:checked ~ .content-wrapper main,
+.dark-mode-input:checked ~ .content-wrapper .categories {
+  background-color: #0f0f0f;
+}
+
+/* Dark Mode Text Colors  */
+.dark-mode-input:checked ~ header,
+.dark-mode-input:checked ~ .content-wrapper main,
+.dark-mode-input:checked ~ .content-wrapper .category,
+.dark-mode-input:checked ~ .content-wrapper .category-heading,
+.dark-mode-input:checked ~ .content-wrapper .footer-section span,
+.dark-mode-input:checked ~ .content-wrapper .copyright {
+  color: #f1f1f1;
+}
+
+/* Subtle text & Icons  */
+.dark-mode-input:checked ~ .content-wrapper .video-text p,
+.dark-mode-input:checked ~ .content-wrapper .material-icons {
+  color: #aaaaaa;
+}
+
+/* Hover & Active States  */
+.dark-mode-input:checked ~ .content-wrapper .video:hover,
+.dark-mode-input:checked ~ .content-wrapper .shorts:hover,
+.dark-mode-input:checked ~ .content-wrapper .category:hover,
+.dark-mode-input:checked ~ header .create-btn,
+.dark-mode-input:checked ~ header .mic-btn,
+.dark-mode-input:checked ~ header input[type="search"] {
+  background-color: #272727;
+}
+.dark-mode-input:checked ~ .content-wrapper .active {
+  background-color: #3d3d3d;
+}
+
+/* Header Dark mode */
+.dark-mode-input:checked ~ header {
+  border-bottom: 1px solid #3d3d3d;
+}
+.dark-mode-input:checked ~ header .searchbar {
+  border-color: #3d3d3d;
+}
+.dark-mode-input:checked ~ header input[type="search"] {
+  color: #f1f1f1;
+}
+.dark-mode-input:checked ~ header .create-btn {
+  color: #f1f1f1;
+}
+.dark-mode-input:checked ~ header .logo {
+  filter: invert(1);
+}
+
+.dark-mode-btn:hover ~ header #search {
+  color: #f1f1f1;
+  background-color: #121212;
+}
+
+/* Toggle from Dark to Light  */
+.dark-mode-input:checked ~ header .dark-icon {
+  display: none;
+}
+.dark-mode-input:checked ~ header .light-icon {
+  display: flex;
+  color: #f1f1f1;
+}
+
 /*-------- NAVIGATION ---------*/
 /* Logo  Navigation  */
 header {
@@ -146,7 +249,17 @@ nav {
   background-color: #f0f0f0;
 }
 
-.mic-btn,
+#search {
+  outline: none;
+  color: #0f0f0f;
+  -webkit-appearance: none;
+}
+
+#search::-webkit-search-cancel-button {
+  display: none;
+}
+
+#search .mic-btn,
 .noty-btn {
   height: 32px;
   width: 32px;
@@ -365,6 +478,10 @@ main {
   padding-left: 12px;
 }
 
+.shorts-header h2 {
+  font-size: 16px;
+}
+
 .shorts-container {
   display: flex;
   overflow-x: auto;
@@ -392,6 +509,13 @@ main {
 }
 
 /* ------Responsive Media Queries -------*/
+/* Laptop Responsive (3 videos per row) */
+@media (max-width: 1200px) {
+  .video {
+    flex: 0 1 calc(33.333% - 16px);
+    max-width: calc(33.333% - 16px);
+  }
+}
 
 /* Tablet Responsiveness (2 videos/row) */
 @media (max-width: 1000px) {
