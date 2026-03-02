@@ -151,7 +151,6 @@ nav {
 .content-wrapper {
   display: flex;
   align-items: flex-start;
-  width: 100%;
 }
 
 /* Side Bar Menu  */
@@ -252,17 +251,16 @@ aside {
 
 /* Video  & Shorts Styles */
 main {
-  flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
-  padding-top: 6x;
   flex-direction: row;
-  gap: 16px;
+  gap: 24px;
+  padding: 24px;
 }
 
 .video {
-  flex: 1 1 calc(33.333% - 16px);
-  max-width: calc(33.333% - 11px);
+  flex: 0 1 calc(33.333% - 16px);
+  max-width: calc(33.333% - 16px);
 
   display: flex;
   flex-direction: column;
@@ -275,7 +273,7 @@ main {
 .video:hover {
   transform: scale(1.03);
   background-color: #f0f0f5;
-  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .video iframe {
