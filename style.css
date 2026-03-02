@@ -12,32 +12,88 @@ body {
   color: rgb(15, 15, 15);
 }
 
-/* Shared Styles  */
-
-/* Typograpphy */
-h2,
-h3 {
-  font-size: 14px;
-  font-weight: 400;
-}
+/*------ Shared Icon Styles ------*/
 
 .material-icons {
   font-size: 20px !important;
   color: #606060;
   cursor: pointer;
-}
-
-/* Navigation  */
-/* Logo  Navigation  */
-nav {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  margin: 8px 0px 20px 0;
+  justify-content: center;
 }
 
-.logo-items {
+/*------- Shared Typography Styles --------- */
+.video-text h3 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.video-text p {
+  font-size: 12px;
+  color: #606060;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* -------- Shared Card Styles ------ */
+.video,
+.shorts {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  height: fit-content;
+}
+
+.video:hover,
+.shorts:hover {
+  background-color: #f2f2f2;
+}
+
+/* -------- Shared iFrame Media Styles ------ */
+.video iframe,
+.shorts iframe {
+  width: 100%;
+  border-radius: 12px;
+  border: none;
+  pointer-events: none;
+}
+
+/*-------- NAVIGATION ---------*/
+/* Logo  Navigation  */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  background-color: white;
+  z-index: 1000;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-items,
+.search-container,
+.profile-container {
   display: flex;
   align-items: center;
 }
@@ -50,11 +106,9 @@ nav {
   height: 20px;
 }
 
-/* Search Bar Styles  */
+/*------ Search Bar Styles ------*/
 
 .search-container {
-  display: flex;
-  align-items: center;
   gap: 12px;
 }
 
@@ -70,12 +124,8 @@ nav {
 
 .searchbar input {
   background-color: transparent;
-  font-size: 12px;
-  font-weight: 400;
-  width: 100%;
   padding: 1px 8px;
   border: none;
-  outline: none;
   flex: 1;
 }
 
@@ -92,13 +142,6 @@ nav {
 
 .searchbar button:hover {
   background-color: #f0f0f0;
-  border: 1px solid #d3d3d3;
-}
-.search-bar span {
-  width: 100%;
-  height: 100%;
-  display: block;
-  fill: currentColor;
 }
 
 .mic-btn,
@@ -112,7 +155,6 @@ nav {
 .mic-btn {
   background-color: #f6f6f6;
 }
-
 .noty-btn {
   background-color: transparent;
 }
@@ -122,11 +164,9 @@ nav {
   background-color: #d9d9d9;
 }
 
-/* Third Nav Styles  */
+/* ------ Third Nav Styles ------*/
 
 .profile-container {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   margin-right: 20px;
   gap: 6px;
@@ -151,12 +191,19 @@ nav {
 .content-wrapper {
   display: flex;
   align-items: flex-start;
+  width: 100%;
 }
 
 /* Side Bar Menu  */
 aside {
   width: 240px;
-  height: 100%;
+  height: calc(100vh - 56px);
+  position: fixed;
+  top: 56px;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 999;
 }
 
 .categories {
@@ -173,11 +220,11 @@ aside {
 .category-section .category:last-child {
   margin-bottom: 10px;
 }
-
 .category-section p {
   font-size: 14px;
   margin: 4px;
 }
+
 .category-heading {
   margin: 10px 0px 10px 25px;
   color: #606060;
@@ -201,13 +248,15 @@ aside {
   background: #f9f9f9;
 }
 
+.category i {
+  margin-right: 24px;
+}
 .channel-icon {
   height: 24px;
   width: 24px;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 24px;
-  cursor: pointer;
 }
 
 .active {
@@ -215,21 +264,13 @@ aside {
   background: #d0d0d0;
 }
 
-.active:hover {
-  background: #d0d0d0;
-}
-
 .active i {
   color: red;
 }
 
-.category i {
-  margin-right: 24px;
-}
 .categories-footer {
   padding: 25px;
 }
-
 .footer-section {
   margin-bottom: 12px;
 }
@@ -249,11 +290,13 @@ aside {
   margin-bottom: 20px;
 }
 
-/* Video  & Shorts Styles */
+/* -------- Main Video Content Area -------*/
 main {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  margin-left: 240px;
+  margin-top: 56px;
   gap: 24px;
   padding: 24px;
 }
@@ -261,27 +304,15 @@ main {
 .video {
   flex: 0 1 calc(33.333% - 16px);
   max-width: calc(33.333% - 16px);
-
-  display: flex;
-  flex-direction: column;
   padding: 12px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .video:hover {
-  transform: scale(1.03);
   background-color: #f0f0f5;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .video iframe {
-  width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 12px;
-  border: none;
-  pointer-events: none;
 }
 
 .video-info {
@@ -299,35 +330,10 @@ main {
   flex-shrink: 0;
 }
 
-.video-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: start;
-}
-
-.video-text h3 {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 2rem;
-  margin-bottom: 4px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.video-text p {
-  font-size: 12px;
-  color: #606060;
-  line-height: 1.8rem;
-}
-
 .more-icon {
   position: absolute;
-  right: -8px;
-  top: 0;
+  right: -4px;
+  top: -2px;
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -340,9 +346,47 @@ main {
 
 .more-icon:hover {
   background-color: rgba(0, 0, 0, 0.1);
-  transform: scale(0.97);
 }
 
-.more-icon i {
-  color: #0f0f0f;
+/* Shorts Styles */
+.shorts-shelf {
+  flex-basis: 100%;
+  margin: 12px 0;
+  padding: 10px 0;
 }
+
+.shorts-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding-left: 12px;
+}
+
+.shorts-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+}
+
+.shorts {
+  flex: 0 1 calc(20% - 12.8px);
+  padding: 8px;
+}
+
+.shorts:hover {
+  background-color: #f7e8e6;
+}
+
+.shorts iframe {
+  aspect-ratio: 9 / 16;
+}
+
+.shorts .video-info {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ------Responsive Media Queries -------*/
