@@ -801,8 +801,12 @@ main {
     padding-right: 24px;
   }
 
+  .shorts-shelf {
+    overflow: hidden;
+  }
+
   .shorts-container {
-    gap: 8px;
+    gap: 6px;
     margin: 0 2px;
     overflow-x: auto;
     display: flex;
@@ -813,8 +817,7 @@ main {
   }
 
   .shorts {
-    flex: 0 0 160px;
-
+    flex: 0 0 30vw;
     padding: 4px;
   }
 
