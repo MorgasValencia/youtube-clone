@@ -820,6 +820,7 @@ main {
   .shorts {
     flex: 0 0 30vw;
     padding: 4px;
+    margin-right: 4px;
   }
 
   .shorts:hover {
