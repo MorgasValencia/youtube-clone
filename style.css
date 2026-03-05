@@ -496,7 +496,9 @@ aside {
   color: #0f0f0f;
 }
 
-.dark-mode-input:checked ~ .content-wrapper .filter-chip:has(input:checked):hover {
+.dark-mode-input:checked
+  ~ .content-wrapper
+  .filter-chip:has(input:checked):hover {
   background: #e5e5e5;
 }
 
@@ -751,6 +753,10 @@ main {
     padding: 0 8px;
   }
 
+  .filter-chips {
+    padding: 12px 12px;
+  }
+
   main {
     margin-left: 0 !important;
     padding: 0 !important;
@@ -797,17 +803,18 @@ main {
 
   .shorts-container {
     gap: 8px;
-    padding-bottom: 12px;
+    margin: 0 2px;
     overflow-x: auto;
     display: flex;
   }
 
-  .shorts:nth-child(n + 3) {
+  .shorts:nth-child(n + 4) {
     display: none;
   }
 
   .shorts {
     flex: 0 0 160px;
+
     padding: 4px;
   }
 
